@@ -137,6 +137,26 @@ ___
 
 Esta libreria fue creada con la intencion de realizar un metodo o funcion que pueda sumar los numeros de un dato recibido como parametro string, el cual sera enviado tambien como parametro string a una funcion de la  segunda clase dentro de la libreria donde el string se convertira en entero para ser tratado en un algoritmo y de esa forma poder retornar la suma a la primera clase y luego esta clase retornara el entero a donde sea utilizada.
 
+    public int Funcion(string numeros)
+        {
+            int suma = int.Parse(numeros);
+            int acum = 0;
+            do
+            {
+                acum = 0;
+                while (suma > 0)
+                {
+                    var cifra = suma % 10;
+                    acum += cifra;
+                    suma = suma / 10;
+                }
+                suma = acum;
+
+            }
+            while (acum > 10);
+            return acum;
+        }
+
 ![DLL](https://github.com/CarlosArciniegas19/Trabajos/blob/master/97016953_746579532545529_7158644724952203264_n.png "Nombre")
 ![DLL](https://github.com/CarlosArciniegas19/Trabajos/blob/master/97125092_910095506115891_7702595508287569920_n.png "Codigo")
 
@@ -145,6 +165,32 @@ Esta libreria fue creada con la intencion de realizar un metodo o funcion que pu
 
 El funcionamiento de esta libreria consiste en un "control de usuario" el cual contiene un metodo llamado "DatosIngresados" el cual recibira como parametro un dato entero (Califacion del "COOMIC") y un dato cadena (Nombre del "COOMIC"), los cuales se usaran como argumento para realizar la creacion de de los puntos de una "Serie" de un graficador tipo "Chart" con todas sus propiedades y al mismo tiempo, realizar la comparacion de dos colores en los cuales en cierta posicion de los puntos de la serie seran aplicados en la graficacion de la columna, ademas, la interfaz de este "control de usuario" contiene tambien un button el cual en su evento "click" se encargara de mostrar o no mostrar el valor de la calificacion del "COOMIC" registrada por el usuario como un Label en la parte superior de la Columna graficada.
 
+    private void button1_Click(object sender, EventArgs e)
+        {
+            bool isValueShownAsLabel = this.chart1.Series[0].IsValueShownAsLabel;
+            if (isValueShownAsLabel)
+            {
+                this.chart1.Series[0].IsValueShownAsLabel = false;
+            }
+            else
+            {
+                this.chart1.Series[0].IsValueShownAsLabel = true;
+            }
+        }
+        
+    public void DatosIngresados(string nombre, int calificacion) 
+        {
+            this.chart1.Series[0].Points.AddXY(nombre,calificacion);
+            bool color = this.chart1.Series[0].Points.Count % 2 == 0;
+            if (color)
+            {
+                this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].Color = Color.PaleVioletRed;
+            }
+            else
+            {
+                this.chart1.Series[0].Points[this.chart1.Series[0].Points.Count - 1].Color = Color.Crimson;
+            }
+        }
 
 ![DLL](https://github.com/CarlosArciniegas19/Trabajos/blob/master/97405174_2553990268175243_8062636401893572608_n.png "Nombre")
 
@@ -156,4 +202,8 @@ ___
 
 <https://www.youtube.com/watch?v=fnTd7t8NovA>
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=fnTd7t8NovA)
+<a href="https://www.youtube.com/watch?v=fnTd7t8NovA
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="FUNCIONAMIENTO" width="240" height="180" border="10" /></a>
+
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=fnTd7t8NovA)](https://www.youtube.com/watch?v=fnTd7t8NovA)
