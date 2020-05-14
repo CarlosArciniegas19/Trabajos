@@ -3,8 +3,8 @@ Hemos realizado una aplicacion de MVC (modelo-vista-controlador) con el fin de u
 
 ![Form1](https://github.com/CarlosArciniegas19/Trabajos/blob/master/97064106_573678496617536_2027945319353810944_n.png "Inicio")
 
-y un boton que permite ir a una nueva venta en la cual puede cambiear los datos del
-coomic del cual se presione el boton.Tambien al registrar un coomic se creara un grafica con el nombre del coomic y se medira segun como 
+Y un boton que permite ir a una nueva ventana en la cual podemos cambiar los datos del
+"COOMIC" del cual se presione el boton. Tambien al registrar un "COOMIC" se creara un grafica con el nombre del coomic y se hara la medicion segun como 
 este calificado el coomic.
  
 ![Form2](https://github.com/CarlosArciniegas19/Trabajos/blob/master/97064104_538006403558205_3994809056932921344_n.png "Actualizacion")
